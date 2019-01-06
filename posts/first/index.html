@@ -70,12 +70,17 @@ ga('send', 'pageview');
 
 
     <div id="disqus_thread"></div>
-<button onclick="disqus_handle()">Click to enable Disqus comments</button>
+<button id="disqus-enable">Click to enable Disqus comments</button>
 
 <script type="text/javascript">
 
 
-function disqus_handle() {
+(function() {
+    var button = document.getElementById("disqus-enable");
+    button.addEventListener("click", function() {
+        this.style.display = 'none';
+    }, false);
+
     
     
     if (window.location.hostname == "localhost")
@@ -85,7 +90,7 @@ function disqus_handle() {
     var disqus_shortname = "allenma-me";
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-};
+})();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
