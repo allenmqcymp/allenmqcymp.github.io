@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 Page not found | Allen Ma&#39;s Blog</title>
+    <title>CampusRides | Allen Ma&#39;s Blog</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
@@ -28,9 +28,18 @@
     <hr/>
     </nav>
 
+<div class="article-meta">
+<h1><span class="title">CampusRides</span></h1>
 
-<h1>Error 404</h1>
-<p>Sorry. Could not find the page you were looking for. However, you can check out other places of my website <a href="/">here</a></p>
+<h2 class="date">Jan 3, 2019</h2>
+</div>
+
+<main>
+<p>An app that allows students in schools who use a &ldquo;jitney&rdquo; service to track the jitney&rsquo;s location and request a ride to and from a location.</p>
+
+<p>Currently under construction for both iOS and Android. Check back soon :-)</p>
+
+</main>
 
   <footer>
   
@@ -47,6 +56,40 @@ ga('send', 'pageview');
 
 
 
+
+    
+        <div class="hidden-div" id="disqus_thread"></div>
+
+<button id="disqus-enable">Click to view the Disqus comments</button>
+<style>
+        .hidden-div {
+            display:none
+        }
+</style>
+
+<script type="text/javascript">
+
+(function() {
+    var button = document.getElementById("disqus-enable");
+    button.addEventListener("click", disqus_handle, false);
+})();
+
+function disqus_handle() {
+    console.log("clicked");
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+    this.style.display = 'none';
+    document.getElementById("disqus_thread").style.display = 'block';
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = "allenma-me";
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
 
 
 
