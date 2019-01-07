@@ -21,7 +21,7 @@
 This site also supports LaTeX via MathJax
 $${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$
 Syntax higlighting via highlight.js - neat, woohoo, yay! /s
-def hello_world(): print(&amp;quot;this is neat&amp;quot;)  </description>
+def hello_world(): print(&amp;quot;this is neat&amp;quot;)  Another feature: if you have an image, it automatically gets centered, like the Github Octocat below:</description>
     </item>
     
   </channel>
