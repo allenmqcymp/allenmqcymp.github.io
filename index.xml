@@ -17,8 +17,8 @@
       <pubDate>Thu, 03 Jan 2019 15:18:28 -0500</pubDate>
       
       <guid>/projects/campusrides/</guid>
-      <description>An app that allows students in schools who use a &amp;ldquo;jitney&amp;rdquo; service to track the jitney&amp;rsquo;s location and request a ride to and from a location.
-Currently under construction for both iOS and Android. Check back soon :-)</description>
+      <description>Many schools are located in small towns. Not everyone on campus has a car. Many such schools implement a shuttle, or jitney service - basically a car service that takes you wherever you like.
+At my college, Colby College, if you want to request a ride or a pickup, the current modus operandi is to call the jitney driver or the security department which oversees the jitney service. Isn&amp;rsquo;t this such an annoying way to request a ride?</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ Currently under construction for both iOS and Android. Check back soon :-)</desc
       <pubDate>Thu, 03 Jan 2019 02:39:55 -0500</pubDate>
       
       <guid>/posts/first/</guid>
-      <description>Still using Hugo to generate my sites and the same-old hand-rolled CSS. Hopefully, I&amp;rsquo;ll be posting more about my excursions in machine-learning over January.
+      <description>Still using Hugo to generate my sites and the same-old hand-rolled CSS.
 This site also supports LaTeX via MathJax
 $${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$
 Syntax higlighting via highlight.js - neat, woohoo, yay! /s

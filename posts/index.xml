@@ -17,7 +17,7 @@
       <pubDate>Thu, 03 Jan 2019 02:39:55 -0500</pubDate>
       
       <guid>/posts/first/</guid>
-      <description>Still using Hugo to generate my sites and the same-old hand-rolled CSS. Hopefully, I&amp;rsquo;ll be posting more about my excursions in machine-learning over January.
+      <description>Still using Hugo to generate my sites and the same-old hand-rolled CSS.
 This site also supports LaTeX via MathJax
 $${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$
 Syntax higlighting via highlight.js - neat, woohoo, yay! /s
