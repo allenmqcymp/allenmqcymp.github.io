@@ -12,9 +12,21 @@
     
     
     <item>
+      <title>Using Python to solve the snake cube puzzle</title>
+      <link>/posts/snakepuzzle/</link>
+      <pubDate>Sun, 06 Oct 2019 02:39:55 -0500</pubDate>
+      
+      <guid>/posts/snakepuzzle/</guid>
+      <description>A few days ago, a friend challenged me with this innocuous snake-looking puzzle cube:
+The rules are simple, rotate the cubes however you like to form a 3x3x3 cube.
+After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using Python.
+My approach was to basically brute force the puzzle by trying one rotation after another while providing certain constraints.</description>
+    </item>
+    
+    <item>
       <title>CampusRides</title>
       <link>/projects/campusrides/</link>
-      <pubDate>Thu, 03 Jan 2019 15:18:28 -0500</pubDate>
+      <pubDate>Thu, 03 Oct 2019 15:18:28 -0500</pubDate>
       
       <guid>/projects/campusrides/</guid>
       <description>Many schools are located in small towns. Not everyone on campus has a car. Many such schools implement a shuttle, or jitney service - basically a car service that takes you wherever you like.
@@ -35,13 +47,15 @@ def hello_world(): print(&amp;quot;this is neat&amp;quot;)  Another feature: if 
     </item>
     
     <item>
-      <title>About</title>
+      <title>About Me</title>
       <link>/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>I am a sophomore studying Computer Science and Math at Colby College.
-I am Chinese, although I&amp;rsquo;ve lived most of my life in Auckland, New Zealand. Even though I&amp;rsquo;ve been told many times that New Zealand is the most beautiful place on Earth, I think every place has its own unique charm. Living and studying in Maine, I&amp;rsquo;ve explored a few very interesting landscapes, and look forward to exploring many more.</description>
+      <description>I am currently studying Computer Science and Math at Colby College, expecting to graduate in 2021. However, I am also studying towards a Bachelor of Electrical Engineering at Dartmouth College, graduating in 2022.
+Please note that completing my B.E in 2022 is optional, and that I am open to full-time offers after graduation in 2021.
+A little bit about myself:
+I am Chinese, although I&amp;rsquo;ve lived most of my life in Auckland, New Zealand.</description>
     </item>
     
   </channel>
