@@ -20,12 +20,12 @@
       <description>Code: github
 A few days ago, a friend challenged me with this innocuous snake-looking puzzle cube:
 The rules are simple, rotate the cubes however you like to form a 3x3x3 cube.
-After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using Python.
+After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using a computer program.
 My approach was to basically brute force the puzzle by trying one rotation after another while providing certain constraints.</description>
     </item>
     
     <item>
-      <title>CampusRides</title>
+      <title>Project - CampusRides</title>
       <link>/projects/campusrides/</link>
       <pubDate>Thu, 03 Oct 2019 15:18:28 -0500</pubDate>
       
@@ -41,6 +41,7 @@ At my college, Colby College, if you want to request a ride or a pickup, the cur
       
       <guid>/posts/first/</guid>
       <description>Still using Hugo to generate my sites and the same-old hand-rolled CSS.
+I am using the XMin theme by Yihui Xie with my own CSS customizations.
 This site also supports LaTeX via MathJax
 $${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$
 Syntax higlighting via highlight.js - neat, woohoo, yay! /s
@@ -53,10 +54,8 @@ def hello_world(): print(&amp;quot;this is neat&amp;quot;)  Another feature: if 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>I am currently studying Computer Science and Math at Colby College, expecting to graduate in 2021. However, I am also studying towards a Bachelor of Electrical Engineering at Dartmouth College, graduating in 2022.
-Please note that completing my B.E in 2022 is optional, and that I am open to full-time offers after graduation in 2021.
-A little bit about myself:
-I am Chinese, although I&amp;rsquo;ve lived most of my life in Auckland, New Zealand.</description>
+      <description>/* three images on the same line */ .column { float: left; width: 33.33%; } .column img { max-width: 80%; } /* increase spacing between images and header */ .row { margin: 1em; } /* Clear floats after the columns */ .row:after { content: &#34;&#34;; display: table; clear: both; }  left: My surname &amp;ldquo;Ma&amp;rdquo; (literally means &amp;ldquo;horse&amp;rdquo;) in Chinese.
+center: Muriwai, New Zealand - source: my iPhone.</description>
     </item>
     
   </channel>

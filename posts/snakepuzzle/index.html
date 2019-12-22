@@ -26,7 +26,7 @@
       
       <li><a href="/about/">About</a></li>
       
-      <li><a href="/projects/">Projects</a></li>
+      <li><a href="/projects/">Portfolio</a></li>
       
       <li><a href="/files/allenma_resume.pdf">Resume</a></li>
       
@@ -51,28 +51,16 @@
 
 <p>The rules are simple, rotate the cubes however you like to form a 3x3x3 cube.</p>
 
-<p>After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using Python.</p>
+<p>After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using a computer program.</p>
 
-<p>My approach was to basically brute force the puzzle by trying one rotation after another while providing certain constraints. More specifically, I used a
-depth-first backtracking search. If you&rsquo;re not familiar with this concept, think of it like so:</p>
+<p>My approach was to basically brute force the puzzle by trying one rotation after another while providing certain constraints. More specifically, I used a depth-first backtracking algorithm.</p>
 
-<p>Imagine you are trying to solve <a href="https://en.wikipedia.org/wiki/Sudoku">Sudoku</a> - the algorithm applied to Sudoku is basically the exact same concept as this snake cube:</p>
-
-<ul>
-<li>Start by filling in the first square with 1, if it doesn&rsquo;t work, try 2, 3, 4 etc.</li>
-<li>If it does work, then move onto the next square, and repeat the process; that is, fill in the square with 1, 2, 3, 4&hellip;9</li>
-<li>At some point, when you try to fill in a square with 1-9, no number will work. This is because the current state is invalid - you&rsquo;re stuck. What now?</li>
-<li>Now you <em>backtrack</em>! Clear the square, move back a square - if it&rsquo;s a 9, clear and move back again, since you can&rsquo;t try any number higher than 9</li>
-<li>When you find a square that&rsquo;s not 9, say 4, then try the next number up, 5, instead and repeat the process of moving onto the next square, filling numbers in, and backtracking when necessary.</li>
-</ul>
-
-<p>That&rsquo;s it. Now the reason why this algorithm is called &ldquo;depth-first&rdquo; is because it tries to plug in as many numbers as it can, until it gets stuck. If one number works, then move onto the next square and so on. It keeps going as deep as possible, hence the name.</p>
+<p>If you&rsquo;re not familiar with the terms, &ldquo;depth-first&rdquo; basically means the algorithm tries to go as far in as possible until it gets stuck. Think of it as trying the first option possible until you get stuck - then moving onto the second, and so on.
+&ldquo;Backtracking&rdquo; is a way to get unstuck, and as the name suggests, you backtrack to the last legal move, and try the next move and so on.</p>
 
 <p>Although not efficient, the algorithm works, and by that I mean that if the problem does have a solution, then this algorithm will always find you one, given enough time.</p>
 
-<p>Applied to the snake cube, my algorithm tries to rotate the first cube into a legal configuration, move onto the next cube, and when it gets stuck undoes the rotation, and tries a different rotation. Rinse and repeat.</p>
-
-<p>I&rsquo;ll use psuedo-code to describe the actual algorithm, because my code deals with a lot of trivial stuff and showing the whole shebang doesn&rsquo;t capture the essence of the solution. If you want the code, it&rsquo;s available <a href="https://gist.github.com/allenmqcymp/793e3a77b449936f00921171d88b4644">here</a></p>
+<p>Applied to the snake cube, my algorithm tries to rotate the first cube into a legal configuration, move onto the next cube, etc. When it gets stuck it undoes the rotation, and tries a different rotation. Rinse and repeat.</p>
 
 <h2 id="dissecting-the-solution">Dissecting the Solution</h2>
 
@@ -84,14 +72,7 @@ depth-first backtracking search. If you&rsquo;re not familiar with this concept,
 
 <p><img src="/img/snakepuzzle/before_rot.JPG" alt="intial_config" /></p>
 
-<p>The initial configuration is described by a list which enumerates the direction the preceeding cube is connected to the current cube.
-In this particular configuration, the list is:</p>
-
-<ul>
-<li>[&ldquo;x&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;x&rdquo;, &ldquo;y&rdquo;, &ldquo;y&rdquo;, &ldquo;x&rdquo;, &ldquo;x&rdquo;]</li>
-</ul>
-
-<p>I parsed this list and generated the list of positions, which is [(0, 0, 0), (1, 0, 0), (2, 0, 0), (2, 1, 0)&hellip;]. The root cube is always (0, 0, 0). This list is what I call the <strong>state</strong> or in my code, <strong>cubes</strong>.</p>
+<p>As you can see, the initial positions is described by: [(0, 0, 0), (1, 0, 0), (2, 0, 0), (2, 1, 0)&hellip;]. The root cube is always (0, 0, 0). This list is what I call the <strong>state</strong> or in my code, <strong>cubes</strong>.</p>
 
 <h3 id="rotations">Rotations</h3>
 
@@ -121,11 +102,9 @@ In this particular configuration, the list is:</p>
 
 <p>Now let&rsquo;s look at the final piece of the solution, the solver function. As I mentioned before, I used a depth-first-search approach with backtracking. I chose to use a stack to implement this. Another completely valid (and elegant) way would be to use recursion, and in my opinion, recursion might actually be a bit more intuitive in this case.</p>
 
-<p>In Sudoku, we have explicit constraints that require no two number to be in the same row, column, or box. In this snake puzzle, the constraints are whatever helps you reach the solution. Therefore, I had to come up with some constraint.</p>
-
 <p>In the context of my solution, I define a rotation as having to be legal - as in, no blocks collide after the rotation, and, the resulting structure must not be out-of-bounds. Not out-of-bounds means that <strong>after a rotation about cube=cubes[idx], the maximum dimension of the vector difference between cubes[idx] and any preceeding cube must be less than 3</strong>. Consider a 3x3x3 cube with its bottom-left corner at (0, 0, 0) and the top-right corner at (2, 2, 2). Any 1x1x1 cube from any other cube must not have a vector difference of (3, 0, 0) or (3, 2, 1), or (3, 0, 2) for instance. The 3 is forbidden, for that implies that some cube is outside the bounds of the 3x3x3 cube.</p>
 
-<p>It turns out that this one other constraint is enough (both sufficient and necessary for you math buffs :D) to solve the problem. We define a cube as solved if the current idx of the cube being considered is 26, since that implies all other cubes are in-bounds, which means the 3x3x3 cube is effectively present. Without further ado, here&rsquo;s the psuedocode.</p>
+<p>It turns out that this one other constraint is enough (both sufficient and necessary for you math geeks) to solve the problem. We define a cube as solved if the current idx of the cube being considered is 26, since that implies all other cubes are in-bounds, which means the 3x3x3 cube is effectively present. Without further ado, here&rsquo;s the psuedocode.</p>
 
 <pre><code class="language-python">def solve(cubes):
     # can't rotate cube 0 since there's no cubes behind it
@@ -169,8 +148,7 @@ In this particular configuration, the list is:</p>
 
 <h3 id="helper-simulation">Helper Simulation</h3>
 
-<p>When I tried to follow the moves the solution yielded, I frequently lost track of the cube index or forgot which way was clockwise and counterclockwise. Yep, I can write
-a script to solve this puzzle yet I don&rsquo;t know my lefts and rights. Anywho, I made a matplotlib simulation of the cube state, so that everytime I pressed a key, it would display the state after rotating.</p>
+<p>When I tried to follow the moves the solution yielded, I frequently lost track of the cube index or forgot which way was clockwise and counterclockwise. I made a matplotlib simulation of the cube state, so that everytime I pressed a key, it would display the state after rotating.</p>
 
 <p>Here&rsquo;s the initial state:</p>
 
@@ -186,7 +164,7 @@ a script to solve this puzzle yet I don&rsquo;t know my lefts and rights. Anywho
 
 <p><img src="/img/snakepuzzle/snakecube_solved.jpg" alt="solvedpic2" /></p>
 
-<p>This puzzle really got me thinking about applying my algorithmic knowledge to a fairly artificial but fun problem. Thanks to Selím for showing me this puzzle, and if you have any suggestions, I would really appreciate if you let me know either in the comments or email.</p>
+<p>This puzzle really got me thinking about applying my algorithmic knowledge to a fairly artificial but fun puzzle. Thanks to Sélim for showing me this puzzle, and if you have any suggestions, I would really appreciate if you let me know either in the comments or email.</p>
 
 </main>
 
@@ -211,9 +189,9 @@ ga('send', 'pageview');
 
 <button id="disqus-enable">Click to view the Disqus comments</button>
 <style>
-        .hidden-div {
-            display:none
-        }
+    .hidden-div {
+        display:none
+    }
 </style>
 
 <script type="text/javascript">

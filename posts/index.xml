@@ -20,7 +20,7 @@
       <description>Code: github
 A few days ago, a friend challenged me with this innocuous snake-looking puzzle cube:
 The rules are simple, rotate the cubes however you like to form a 3x3x3 cube.
-After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using Python.
+After banging my head on this for a few hours, I decided to put the damn thing to rest by solving it using a computer program.
 My approach was to basically brute force the puzzle by trying one rotation after another while providing certain constraints.</description>
     </item>
     
@@ -31,6 +31,7 @@ My approach was to basically brute force the puzzle by trying one rotation after
       
       <guid>/posts/first/</guid>
       <description>Still using Hugo to generate my sites and the same-old hand-rolled CSS.
+I am using the XMin theme by Yihui Xie with my own CSS customizations.
 This site also supports LaTeX via MathJax
 $${\sqrt {n}}\left(\left({\frac {1}{n}}\sum _{i=1}^{n}X_{i}\right)-\mu \right)\ {\xrightarrow {d}}\ N\left(0,\sigma ^{2}\right)$$
 Syntax higlighting via highlight.js - neat, woohoo, yay! /s
